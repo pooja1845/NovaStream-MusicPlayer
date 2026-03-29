@@ -133,6 +133,24 @@ async function loadFeaturedSets(genresArray) {
     })
 }
 
+function showWelcomeModal(user) {
+    const modal = document.getElementById("welcomeModal");
+    const modalName = document.getElementById("modalUserName");
+    if (modal && user) {
+        modalName.innerHTML = `Welcome back, ${user.name}!`;
+        modal.classList.add("show");
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById("welcomeModal");
+    if (modal) {
+        modal.classList.remove("show");
+        // Ensure UI is updated if not already
+        updateAuthUI();
+    }
+}
+
 function showToast(message, type = 'success') {
     const toast = document.createElement("div");
     toast.className = `toast toast-${type}`;
@@ -180,7 +198,10 @@ async function main() {
     // Check for login success flag
     if (sessionStorage.getItem('login_success')) {
         const user = Auth.getCurrentUser();
-        if (user) showToast(`Welcome back, ${user.name}!`, 'success');
+        if (user) {
+            updateAuthUI();
+            showWelcomeModal(user);
+        }
         sessionStorage.removeItem('login_success');
     }
 

@@ -74,6 +74,7 @@
         </main>
 
         <!-- Floating Player Widget -->
+        <!-- Floating Player Widget -->
         <div class="now-playing-bar">
             <div class="songInfoWrapper">
                 <img id="playerCover" src="img/music.svg" alt="cover">
@@ -102,6 +103,17 @@
             </div>
         </div>
     </div>
+
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">✨</div>
+            <h2 id="modalWelcome">Successfully Logged In!</h2>
+            <p id="modalUserName">Welcome to NovaStream</p>
+            <button class="modal-btn" onclick="closeModal()">Start Listening</button>
+        </div>
+    </div>
+
     <script src="auth.js"></script>
     <script src="script.js"></script>
 </body>
