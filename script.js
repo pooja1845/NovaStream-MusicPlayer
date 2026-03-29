@@ -133,6 +133,24 @@ async function loadFeaturedSets(genresArray) {
     })
 }
 
+function showToast(message, type = 'success') {
+    const toast = document.createElement("div");
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `
+        <div class="toast-content">
+            <span class="toast-icon">${type === 'success' ? '✓' : '⚠'}</span>
+            <span class="toast-message">${message}</span>
+        </div>
+    `;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => toast.classList.add("show"), 100);
+    setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 500);
+    }, 3000);
+}
+
 function updateAuthUI() {
     const authButtons = document.getElementById("authButtons");
     const user = Auth.getCurrentUser();
@@ -140,7 +158,13 @@ function updateAuthUI() {
     if (user) {
         authButtons.innerHTML = `
             <div class="user-profile">
-                <span class="user-name">Hi, ${user.name.split(' ')[0]}</span>
+                <div class="user-avatar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <span class="user-name">${user.name.split(' ')[0]}</span>
                 <button class="logoutbtn" onclick="Auth.logout()">Log out</button>
             </div>
             <div class="hamburgerContainer">
@@ -152,6 +176,14 @@ function updateAuthUI() {
 
 async function main() {
     updateAuthUI();
+    
+    // Check for login success flag
+    if (sessionStorage.getItem('login_success')) {
+        const user = Auth.getCurrentUser();
+        if (user) showToast(`Welcome back, ${user.name}!`, 'success');
+        sessionStorage.removeItem('login_success');
+    }
+
     await loadFeaturedSets(bollywoodGenres);
     // Load a default playlist
     await fetchSongsFromiTunes("bollywood hits");
