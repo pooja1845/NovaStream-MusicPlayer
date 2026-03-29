@@ -313,18 +313,27 @@ async function main() {
 const searchItem = document.getElementById("searchItem");
 const searchInput = document.getElementById("searchInput");
 
-searchItem.addEventListener("click", () => {
-    searchItem.classList.add("expanded");
-    searchInput.focus();
-});
+// Initialize when everything is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    main();
 
-document.addEventListener("click", (e) => {
-    if (!searchItem.contains(e.target)) {
-        searchItem.classList.remove("expanded");
-        if (!searchInput.value) {
-            searchInput.blur();
-        }
+    // Re-initialize search item listeners
+    const searchItem = document.getElementById("searchItem");
+    const searchInput = document.getElementById("searchInput");
+    
+    if (searchItem && searchInput) {
+        searchItem.addEventListener("click", () => {
+            searchItem.classList.add("expanded");
+            searchInput.focus();
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!searchItem.contains(e.target)) {
+                searchItem.classList.remove("expanded");
+                if (!searchInput.value) {
+                    searchInput.blur();
+                }
+            }
+        });
     }
 });
-
-main();
