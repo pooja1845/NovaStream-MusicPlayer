@@ -4,15 +4,16 @@ NovaStream is a modern web-based music player that allows users to search and st
 
 🚀 Features
 
-🔍 Search for any song, artist, or album
-🎧 Play 30-second high-quality audio previews
-⚡ Fast and responsive UI
-🎨 Clean and modern design
-📱 Works on both desktop and mobile
+    🔍 Search for any song, artist, or album
+    🎧 Play 30-second high-quality audio previews
+    ⚡ Fast and responsive UI
+    🎨 Clean and modern design
+    📱 Works on both desktop and mobile
 
 🌐 Live Demo
 
 👉 Try NovaStream here:
+
 🔗 https://novastream-musicplayer.netlify.app/
 
 
