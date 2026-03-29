@@ -4,106 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify - Web Player: Music for everyone</title>
+    <title>NovaStream - The Future of Music</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <div class="container flex bg-black ">
-        <div class="left">
-            <div class="home bg-grey m-1 p-1">
-
-                <img class="invert close" src="img/close.svg" alt="">
-                <div class="logo"><img class="invert" width="100px" src="img/logo.svg" alt="logo"></div>
+    <div class="glass-background"></div>
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="logo-area">
+                <div class="logo-icon"></div>
+                <span class="logo-text">NovaStream</span>
+            </div>
+            <div class="nav-links">
                 <ul>
-                    <li><img class="invert" src="img/home.svg" alt="">Home</li>
+                    <li id="navHome" class="active">Home</li>
+                    <li id="navDiscover">Discover</li>
                     <li id="searchItem">
-                        <img class="invert" src="img/search.svg" alt="" id="searchIcon">
+                        <img class="icon" src="img/search.svg" alt="" id="searchIcon">
                         <span id="searchText">Search</span>
-                        <input type="text" id="searchInput" placeholder="Search..." />
+                        <input type="text" id="searchInput" placeholder="Search Bollywood..." />
                     </li>
-
                 </ul>
             </div>
-            <div class="library bg-grey m-1 p-1">
+            <div class="nav-buttons" id="authButtons">
+                <a href="signup.html"><button class="signupbtn">Sign up</button></a>
+                <a href="login.html"><button class="loginbtn">Log in</button></a>
+                <div class="hamburgerContainer">
+                    <img class="icon hamburger" src="img/hamburger.svg" alt="">
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Center Content (Playlists) -->
+            <div class="center-content">
+                <div class="hero-section">
+                    <h1>Welcome into the <span class="accent">Aura</span></h1>
+                    <p>Discover your favorite Bollywood tracks.</p>
+                </div>
+                
+                <div class="spotifyPlaylists">
+                    <h2>Bollywood Sets</h2>
+                    <div class="cardContainer">
+                        <!-- Cards injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar (Library) -->
+            <aside class="left library-sidebar">
+                <div class="close-sidebar">
+                    <img class="icon close" src="img/close.svg" alt="close">
+                </div>
                 <div class="heading">
-                    <img class="invert" src="img/playlist.svg" alt="">
+                    <img class="icon" src="img/playlist.svg" alt="playlist">
                     <h2>Your Library</h2>
                 </div>
                 <div class="songlist">
                     <ul>
-
+                        <!-- Songs injected here -->
                     </ul>
                 </div>
-                <div class="footer">
-                    <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a>
-                    </div>
-                    <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
-                </div>
-            </div>
-        </div>
-        <div class="right">
-            <div class="header">
-                <div class="nav">
-                    <div class="hamburgerContainer">
-                        <img class="invert hamburger" width="50px" height="50px" src="img/hamburger.svg" alt="">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
-                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
-                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
+            </aside>
+        </main>
 
-                </div>
-                <div class="button">
-                    <button class="signupbtn">Sign up</button>
-                    <button class="loginbtn">Log in</button>
-                </div>
+        <!-- Floating Player Widget -->
+        <div class="now-playing-bar">
+            <div class="songInfoWrapper">
+                <img id="playerCover" src="img/music.svg" alt="cover">
+                <div class="songInfo"></div>
             </div>
-            <div class="spotifyPlaylists">
-                <h2>Spotify Playlists </h2>
-                <div class="cardContainer ">
-</div>
-                <div class="playbar">
+            <div class="playerControls">
+                <div class="playbutton">
+                    <img class="icon" id="previous" src="img/prevsong.svg" alt="prev">
+                    <img class="icon play-btn" id="play" src="img/play.svg" alt="play">
+                    <img class="icon" id="next" src="img/nextsong.svg" alt="next">
+                </div>
+                <div class="progress-container">
+                    <span class="songTime">00:00/00:00</span>
                     <div class="seekbar">
                         <div class="circle"></div>
                     </div>
-                    <div class="abovebar">
-                        <div class="songInfo">
-
-                        </div>
-                        <div class="playbutton">
-                            <img width="30px" id="previous" src="img/prevsong.svg" alt="">
-                            <img width="30px" id="play" src="img/play.svg" alt="">
-                            <img width="30px" id="next" src="img/nextsong.svg" alt="">
-                        </div>
-                        <div class="timeVol">
-                            <div class="songTime"></div>
-                            <div class="volume">
-                                <img src="img/volume.svg" alt="">
-                                <div class="range">
-                                    <input type="range" min="0" max="1" step="0.1" value="0.7">
-                                </div>
-                            </div>
-
-                        </div>
+                </div>
+            </div>
+            <div class="volumeControl timeVol">
+                <div class="volume">
+                    <img src="img/volume.svg" class="icon" alt="vol">
+                    <div class="range">
+                        <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="0.7">
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
+    <script src="auth.js"></script>
     <script src="script.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
-# 🎵 Music Player – Spotify Clone
+# 🚀 NovaStream - The Future of Music
 
 A **responsive music player** built using **HTML, CSS, and JavaScript**, inspired by Spotify. This app dynamically fetches and plays songs from a local folder, offering a smooth and interactive music streaming experience.
 

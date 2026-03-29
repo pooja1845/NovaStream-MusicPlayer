@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NovaStream</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+    <div class="glass-background"></div>
+    
+    <div class="auth-card">
+        <div class="logo-area">
+            <div class="logo-icon"></div>
+            <span class="logo-text">NovaStream</span>
+        </div>
+        
+        <h1>Welcome Back</h1>
+        <p>Login to your account to continue</p>
+        
+        <form class="auth-form" onsubmit="event.preventDefault(); window.location.href='index.html';">
+            <div class="input-group">
+                <label for="email">Email or Username</label>
+                <input type="text" id="email" class="auth-input" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="auth-input" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="submit" class="auth-btn">Log In</button>
+        </form>
+        
+        <div class="auth-footer">
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            <p style="margin-top: 10px;"><a href="index.html" style="color:var(--text-secondary); font-weight: 400;">Back to Home</a></p>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+    <script>
+        document.querySelector('.auth-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            const result = Auth.login(email, password);
+            
+            if (result.success) {
+                window.location.href = 'index.html';
+            } else {
+                alert(result.message);
+            }
+        });
+    </script>
+</body>
+</html>
