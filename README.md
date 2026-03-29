@@ -1,44 +1,21 @@
-# 🚀 NovaStream - The Future of Music
+NovaStream – Music Player
 
-A **responsive music player** built using **HTML, CSS, and JavaScript**, inspired by Spotify. This app dynamically fetches and plays songs from a local folder, offering a smooth and interactive music streaming experience.
+NovaStream is a modern web-based music player that allows users to search and stream 30-second high-quality previews of songs using the iTunes Search API. It’s completely free and requires no authentication.
 
----
+🚀 Features
+🔍 Search for any song, artist, or album
+🎧 Play 30-second high-quality audio previews
+⚡ Fast and responsive UI
+🎨 Clean and modern design
+📱 Works on both desktop and mobile
+🌐 Live Demo
 
-## 🚀 Features
-
-- 🎧 Spotify-style responsive UI
-- 🗂️ Dynamically loads songs from a folder using JavaScript
-- 🔁 Play/Pause, Next/Previous track control
-- 📱 Mobile-friendly layout
-- ⏱️ Displays song duration and progress
-- 🔊 Volume control 
-- 🎨 Dark theme design
-
----
+👉 Try NovaStream here:
+🔗 https://novastream-musicplayer.netlify.app/
 
 
-## 🛠️ Tech Stack
-
-- **HTML** – Page structure
-- **CSS** – Styling and responsiveness
-- **JavaScript** – Dynamic song loading and playback logic
-
----
-
-## 📂 Folder Structure
-├── index.html
-├── style.css
-├── script.js
-├── /img # Icons & images
-├── /songs # Your MP3 files
-└── README.md
-
----
-
-## 📥 How to Use
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/MusicPlayer.git
-   cd MusicPlayer
-   Place .mp3 files in the /songs folder.
+🛠️ Tech Stack
+HTML – Structure of the web app
+CSS – Styling and responsive design
+JavaScript – Functionality and API handling
+iTunes Search API – Fetching music data
