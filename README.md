@@ -18,6 +18,7 @@ NovaStream is a modern web-based music player that allows users to search and st
 
 
 🛠️ Tech Stack
+
         HTML – Structure of the web app
         CSS – Styling and responsive design
         JavaScript – Functionality and API handling
